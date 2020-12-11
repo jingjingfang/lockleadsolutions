@@ -1,7 +1,7 @@
-# lockleadsolutions
+# lockleadsolutions Database Design
 
 <br>
-<h2>database design </h2>
+
 
 <p>Locklead Solutions does electrical, interior, and exterior work for clients. The company is currently involved with three projects: Highland House, Baker
 Remodel, and Hew Remodel. They purchase various products and pieces of equipment, such as wire, siding,
