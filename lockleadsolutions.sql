@@ -143,7 +143,7 @@ UNLOCK TABLES;
 
 use lockleadsolutions;
 
--- 4A --
+-- Total final price for the Highland House project --
 select proj_name, round(sum(extended_price*(1-discount/100)),2)as finalprice
 from project, quote, supplier
 where project.proj_id =quote.proj_id and
@@ -151,7 +151,8 @@ quote.supplier_id= supplier.supplier_id AND
 project.proj_name like 'highland house'
 group by proj_name;
 
--- 4B --
+-- the total final price for all items, grouped by category and sorted in descending order of total final price  --                          
+                            
 SELECT category, round(sum(extended_price * (1-discount/100)), 2) as totalprice
 from item, quote, supplier
 where quote.supplier_id=supplier.supplier_id and
@@ -159,7 +160,9 @@ item.item_Num= quote.item_Num
 group by category
 order by totalprice desc;
 
--- 4C --
+/* List all of the company projects (project name), the owner name and contact information for each project, the equipment (item description) 
+   needed for that project, and the total final price (which includes the discount, defined above) */                 
+                           
 select proj_name, owner_name, owner_phone, item_desc, round(sum(extended_price * (1-discount/100)), 2) as totalprice
 from project, item, quote, supplier
 where item.item_num= quote.Item_Num
@@ -168,19 +171,16 @@ and supplier.Supplier_ID= quote.Supplier_ID
 group by proj_name, item_desc, owner_name, owner_phone
 order by proj_name, item_desc;
 
--- 4D --
+/*List the total final price (defined above) grouped by each supplier name. Round the
+result to two decimal places. Sort the result in descending order by total final price.*/                                            
+                                                                
 SELECT supplier_name, Round(sum(extended_price*(1-discount/100)),2) as Totalprice
 FROM supplier, quote
 WHERE supplier.supplier_id= quote.supplier_id
 group by supplier_name
 order by totalprice desc;
 
--- 4E --
+-- List the extended_price is more than $1000 --
 select * from quote
 where extended_price in (select extended_price from quote where extended_price > 1000) 
 order by extended_price desc;
-
-
-
-
-
