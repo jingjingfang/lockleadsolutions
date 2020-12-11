@@ -1,10 +1,13 @@
 # lockleadsolutions
-<h1>database design </h1>
 
-<p>The company does electrical, interior, and exterior work for clients. The company is currently involved with three projects: Highland House, Baker
+<br>
+<h2>database design </h2>
+
+<p>Locklead Solutions does electrical, interior, and exterior work for clients. The company is currently involved with three projects: Highland House, Baker
 Remodel, and Hew Remodel. They purchase various products and pieces of equipment, such as wire, siding,
 doors, shingles, electrical panels, etc. from a supplier (often at a discount). Some of their trusted suppliers
 are NW Electric, EB Supplies, Contractor, Inc., and Interior, Inc. </P>
+<br>
 
 <h2>Business Rules</h2>
 
